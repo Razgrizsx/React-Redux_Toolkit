@@ -1,8 +1,7 @@
-const configureStore = require("@reduxjs/toolkit").configureStore
-const { getDefaultMiddleware } = require("@reduxjs/toolkit")
-const cakeReducer = require("../features/cake/cakeSlice")
-const icecreamReducer = require("../features/icecream/icecreamSlice")
-const userReducer = require("../features/user/userSlice")
+import { configureStore } from "@reduxjs/toolkit"
+import cakeReducer from "../features/cake/cakeSlice"
+import icecreamReducer from "../features/icecream/icecreamSlice"
+import userReducer from "../features/user/userSlice"
 
 //const reduxlogger = require("redux-logger")
 
@@ -15,8 +14,8 @@ const store = configureStore({
         icecream: icecreamReducer,
         user: userReducer
     },
-    //middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)
+    //middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)  need to import getDefaultMiddleware (deprecated)
     
 })
 
-module.exports = store
+export default store
