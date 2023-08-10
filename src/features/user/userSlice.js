@@ -6,7 +6,7 @@ import axios from "axios"
 
 export const fetchUsers = createAsyncThunk('user/fetchUsers', async () => {  //generates pending, fulfilled and rejected actions
    return await axios.get('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.data.map(user =>user.id))
+    .then(res => res.data)
 }) 
 
 const initialState = {
